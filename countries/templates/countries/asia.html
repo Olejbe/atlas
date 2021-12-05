@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+List of countries
+{% endblock %}
+
+{% block content %}
+    {% if countries %}
+
+<div class="container py-3" >
+      <!-- Table -->
+    <h3>Overview</h3>
+    <h5>Overview of all Asian countries</h5>
+    <table class="table table-striped">
+        <tr>
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Density (P/Km²)</th>
+            <th>Land Area(Km²)</th>
+            <th></th>
+        </tr>
+        {% for country in countries %}
+        <tr>
+            <td>{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
+            <td>{{ country.population }}</td>
+            <td>{{ country.population_density }}</td>
+            <td>{{ country.land_area}}</td>
+            <td><a href="./{{ country.name }}" class="btn btn-light">More</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+    {% else %}
+    <p>No countries are available.</p>
+    {% endif %}
+
+{% endblock %}

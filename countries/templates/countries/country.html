@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+List of countries
+{% endblock %}
+
+{% block content %}
+    {% if country %}
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+            </div>
+
+
+          <div class="container py-3">
+            <h2>Countries</h2>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3 pb-4">
+                  <div class="card h-100" style="border:none">
+                    <img src="https://flagcdn.com/256x192/{{ country.alpha_2 }}.png" class="card-img-top" alt="{{ country.name}}" style="width: auto; height: 250px; object-fit: scale-down;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ country.name }}</h5>
+                      <p class="card-text text-muted" style="font-size:12px">{{ country.land_area }}</p>
+                      <p class="card-text">{{ country.capital }}</p>
+                      <p class="card-text">{{ country.population }}</p>
+                      <a href="{{ p.affiliate_url }}" class="btn btn-warning">Hello</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+    {% else %}
+        <p>No countries are available.</p>
+    {% endif %}
+
+{% endblock %}

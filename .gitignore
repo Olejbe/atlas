@@ -1,0 +1,40 @@
+main/.env
+
+# Pycharm Stuff
+.idea/atlas.iml
+.idea/csv-plugin.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/sonarlint/issuestore/index.pb
+.idea/vcs.xml
+
+
+
+# Django #
+db.sqlite3
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+
+# Distribution / packaging
+.Python build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec

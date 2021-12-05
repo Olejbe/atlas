@@ -1,0 +1,196 @@
+Country,Population(2020),Land Area(Km²), Density(P/Km²),Continent,Alpha2,Alpha3,Capital
+afghanistan,38928346,652860,60,asia,af,afg,kabul
+albania,2877797,27400,105,europe,al,alb,Tirana
+algeria,43851044,2381740,18,africa,dz,dza,Algiers
+andorra,77265,470,164,europe,ad,and,Andorra la Vella
+angola,32866272,1246700,26,africa,ao,ago,Luanda
+antigua and Barbuda,97929,440,223,north-america,ag,atg,Saint John's
+argentina,45195774,2736690,17,south-america,ar,arg,Buenos Aires
+armenia,2963243,28470,104,asia,am,arm,Yerevan
+australia,25499884,7682300,3,oceania,au,aus,Canberra
+austria,9006398,82409,109,europe,at,aut,Vienna
+azerbaijan,10139177,82658,123,asia,az,aze,Baku
+bahamas,393244,10010,39,north-america,bs,bhs,Nassau
+bahrain,1701575,760,2239,asia,bh,bhr,Manama
+bangladesh,164689383,130170,1265,asia,bd,bgd,Dhaka
+barbados,287375,430,668,north-america,bb,brb,Bridgetown
+belarus,9449323,202910,47,europe,by,blr,Minsk
+belgium,11589623,30280,383,europe,be,bel,Brussels
+belize,397628,22810,17,north-america,bz,blz,Belmopan
+benin,12123200,112760,108,africa,bj,ben,Porto-Novo
+bhutan,771608,38117,20,asia,bt,btn,Thimphu
+bolivia,11673021,1083300,11,south-america,bo,bol,Sucre
+bosnia and Herzegovina,3280819,51000,64,europe,ba,bih,Sarajevo
+botswana,2351627,566730,4,africa,bw,bwa,Gaborone
+brazil,212559417,8358140,25,south-america,br,bra,Brasilia
+brunei,437479,5270,83,asia,bn,brn,Bandar Seri Begawan
+bulgaria,6948445,108560,64,europe,bg,bgr,Sofia
+burkina Faso,20903273,273600,76,africa,bf,bfa,Ouagadougou
+burundi,11890784,25680,463,africa,bi,bdi,Gitega
+côte d'Ivoire,26378274,318000,83,africa,ci,civ,Abidjan
+cape Verde,555987,4030,138,africa,cv,cpv,Praia
+cambodia,16718965,176520,95,asia,kh,khm,Phnom Penh
+cameroon,26545863,472710,56,africa,cm,cmr,Yaounde
+canada,37742154,9093510,4,north-america,ca,can,Ottawa
+central African Republic,4829767,622980,8,africa,cf,caf,Bangui
+chad,16425864,1259200,13,africa,td,tcd,N'Djamena
+chile,19116201,743532,26,south-america,cl,chl,Santiago
+china,1439323776,9388211,153,asia,cn,chn,Beijing
+colombia,50882891,1109500,46,south-america,co,col,Bogota
+comoros,869601,1861,467,africa,km,com,Moroni
+congo (Congo-Brazzaville),5518087,341500,16,africa,cg,cog,Brazzaville
+costa Rica,5094118,51060,100,south-america,cr,cri,San Jose
+croatia,4105267,55960,73,europe,hr,hrv,Zagreb
+cuba,11326616,106440,106,north-america,cu,cub,Havana
+cyprus,1207359,9240,131,europe,cy,cyp,Nicosia
+czechia (Czech Republic),10708981,77240,139,europe,cz,cze,Prague
+democratic Republic of the Congo,89561403,2267050,40,africa,cd,cod,Kinshasa
+denmark,5792202,42430,137,europe,dk,dnk,Copenhagen
+djibouti,988000,23180,43,africa,dj,dji,Djibouti
+dominica,71986,750,96,north-america,dm,dma,Roseau
+dominican Republic,10847910,48320,225,north-america,do,dom,Santo Domingo
+ecuador,17643054,248360,71,south-america,ec,ecu,Quito
+egypt,102334404,995450,103,africa,eg,egy,Cairo
+el Salvador,6486205,20720,313,north-america,sv,slv,San Salvador
+equatorial Guinea,1402985,28050,50,africa,gq,gnq,Malabo
+eritrea,3546421,101000,35,africa,er,eri,Asmara
+estonia,1326535,42390,31,europe,ee,est,Tallinn
+eswatini (fmr. Swaziland),1160164,17200,67,africa,sz,swz,Mbabana
+ethiopia,114963588,1000000,115,africa,et,eth,Addis Ababa
+fiji,896445,18270,49,oceania,fj,fji,Suva
+finland,5540720,303890,18,europe,fi,fin,Helsinki
+france,65273511,547557,119,europe,fr,fra,Paris
+gabon,2225734,257670,9,africa,ga,gab,Libreville
+gambia,2416668,10120,239,africa,gm,gmb,Banjul
+georgia,3989167,69490,57,asia,ge,goe,Tbilisi
+germany,83783942,348560,240,europe,de,deu,Berlin
+ghana,31072940,227540,137,africa,gh,gha,Accra
+greece,10423054,128900,81,europe,gr,grc,Athens
+grenada,112523,340,331,north-america,gd,grd,Saint George's
+guatemala,17915568,107160,167,north-america,gt,gtm,Guatemala City
+guinea,13132795,245720,53,africa,gn,gin,Bissau
+guinea-Bissau,1968001,28120,70,africa,gw,gnb,Bissau
+guyana,786552,196850,4,south-america,gy,guy,Georgetown
+haiti,11402528,27560,414,north-america,ht,hti,Port au Prince
+holy See,801,0,2003,europe,va,vat,Vatican city
+honduras,9904607,111890,89,north-america,hn,hnd,Tegucigalpa
+hungary,9660351,90530,107,europe,hu,hun,Budapest
+iceland,341243,100250,3,europe,is,isl,Reykjavik
+india,1380004385,2973190,464,asia,in,ind,New Delhi
+indonesia,273523615,1811570,151,asia,id,idn,Jakarta
+iran,83992949,1628550,52,asia,ir,irn,Tehran
+iraq,40222493,434320,93,asia,iq,irq,Baghdad
+ireland,4937786,68890,72,europe,ie,irl,Dublin
+israel,8655535,21640,400,asia,il,isr,Jerusalem
+italy,60461826,294140,206,europe,it,ita,Rome
+jamaica,2961167,10830,273,north-america,jm,jam,Kingston
+japan,126476461,364555,347,asia,jp,jpn,Tokyo
+jordan,10203134,88780,115,asia,jo,jor,Amman
+kazakhstan,18776707,2699700,7,asia,kz,kaz,Nur-Sultan
+kenya,53771296,569140,94,africa,ke,ken,Nairobi
+kiribati,119449,810,147,oceania,ki,kir,Tarawa Atoll
+kuwait,4270571,17820,240,asia,kw,kwt,Kuwait City
+kyrgyzstan,6524195,191800,34,asia,kg,kzz,Bishkek
+laos,7275560,230800,32,asia,la,lao,Vientiane
+latvia,1886198,62200,30,europe,lv,lva,Riga
+lebanon,6825445,10230,667,asia,lb,lbn,Beirut
+lesotho,2142249,30360,71,africa,ls,lso,Maseru
+liberia,5057681,96320,53,africa,lr,lbr,Monrovia
+libya,6871292,1759540,4,africa,ly,lby,Tripoli
+liechtenstein,38128,160,238,europe,li,lie,Vaduz
+lithuania,2722289,62674,43,europe,lt,ltu,Vilnius
+luxembourg,625978,2590,242,europe,lu,lux,Luxembourg
+madagascar,27691018,581795,48,africa,mg,mdg,Antananarivo
+malawi,19129952,94280,203,africa,mw,mwi,Lilongwe
+malaysia,32365999,328550,99,asia,my,mys,Kuala Lumpur
+maldives,540544,300,1802,asia,mv,mdv,Male
+mali,20250833,1220190,17,africa,ml,mli,Bamako
+malta,441543,320,1380,europe,mt,mlt,Valletta
+marshall Islands,59190,180,329,oceania,mh,mhl,Majuro
+mauritania,4649658,1030700,5,africa,mr,mrt,Nouakchott
+mauritius,1271768,2030,626,africa,mu,mus,Port Louis
+mexico,128932753,1943950,66,north-america,mx,mex,Mexico City
+micronesia,548914,700,784,oceania,fm,fsm,Palikir
+moldova,4033963,32850,123,europe,md,mda,Chisinau
+monaco,39242,1,26337,europe,mc,mar,Monaco
+mongolia,3278290,1553560,2,asia,mn,mng,Ulaanbaatar
+montenegro,628066,13450,47,europe,me,mne,Podgorica
+morocco,36910560,446300,83,africa,ma,mar,Rabat
+mozambique,31255435,786380,40,africa,mz,moz,Maputo
+myanmar (formerly Burma),54409800,653290,83,asia,mm,mmr,Nay Pyi Taw
+namibia,2540905,823290,3,africa,na,nam,Windhoek
+nauru,10824,20,541,oceania,nr,nru,No official capital
+nepal,29136808,143350,203,asia,np,npl,Kathmandu
+netherlands,17134872,33720,508,europe,nl,nld,Amsterdam
+new Zealand,4822233,263310,18,oceania,nz,nzl,Wellington
+nicaragua,6624554,120340,55,north-america,ni,nic,Managua
+niger,24206644,1266700,19,africa,ne,ner,Niamey
+nigeria,206139589,910770,226,africa,ng,nga,Abuja
+north Korea,25778816,120410,214,asia,kp,pbk,Pyongyang
+north Macedonia,2083374,25220,83,europe,mk,mkd,Skopje
+norway,5421241,365268,15,europe,no,nor,Oslo
+oman,5106626,309500,16,asia,om,omn,Muscat
+pakistan,220892340,770880,287,asia,pk,pak,Islamabad
+palau,18094,460,39,oceania,pw,plw,Melekeok
+palestine State,5101414,6020,847,asia,ps,pse,
+panama,4314767,74340,58,north-america,pa,pan,Panama City
+papua New Guinea,8947024,452860,20,oceania,pg,png,Port Moresby
+paraguay,7132538,397300,18,south-america,py,pry,Asuncion
+peru,32971854,1280000,26,south-america,pe,per,Lima
+philippines,109581078,298170,368,asia,ph,phl,Manila
+poland,37846611,306230,124,europe,pl,pol,Warsaw
+portugal,10196709,91590,111,europe,pt,prt,Lisbon
+qatar,2881053,11610,248,asia,qa,qat,Doha
+romania,19237691,230170,84,europe,ro,rou,Bucharest
+russia,145934462,16376870,9,europe,ru,rus,Moscow
+rwanda,12952218,24670,525,africa,rw,rwa,Kigali
+saint Kitts and Nevis,53199,260,205,north-america,kr,kna,Basseterre
+saint Lucia,183627,610,301,north-america,lc,lca,Castries
+saint Vincent and the Grenadines,110940,390,284,north-america,vc,vct,Kingstown
+samoa,198414,2830,70,oceania,ws,wsm,Apia
+san Marino,33931,60,566,europe,sm,smr,San Marino
+sao Tome and Principe,219159,960,228,africa,st,stp,Sao Tome
+saudi Arabia,34813871,2149690,16,asia,sa,sau,Riyadh
+senegal,16743927,192530,87,africa,sn,sen,Dakar
+serbia,8737371,87460,100,europe,rs,srb,Belgrade
+seychelles,98347,460,214,africa,sc,syc,Victoria
+sierra Leone,7976983,72180,111,africa,sl,sle,Freetown
+singapore,5850342,700,8358,asia,sg,sgp,Singapore
+slovakia,5459642,48088,114,europe,sk,svk,Bratislava
+slovenia,2078938,20140,103,europe,si,svn,Ljubljana
+solomon Islands,686884,27990,25,oceania,sb,slb,Honiara
+somalia,15893222,627340,25,africa,so,som,Mogadishu
+south Africa,59308690,1213090,49,africa,za,zaf,Pretoria
+south Korea,51269185,97230,527,asia,kr,kor,Seoul
+south Sudan,11193725,610952,18,africa,ss,ssd,Juba
+spain,46754778,498800,94,europe,es,esp,Madrid
+sri Lanka,21413249,62710,341,asia,lk,lka,Colombo
+sudan,43849260,1765048,25,africa,sd,sdn,Khartoum
+suriname,586632,156000,4,south-america,sr,sur,Paramaribo
+sweden,10099265,410340,25,europe,se,swe,Stockholm
+switzerland,8654622,39516,219,europe,ch,che,Bern
+syria,17500658,183630,95,asia,sy,syr,Damascus
+tajikistan,9537645,139960,68,asia,tj,tjk,Dushanbe
+tanzania,59734218,885800,67,africa,tz,tza,Dodoma
+thailand,69799978,510890,137,asia,th,tha,Bangkok
+timor-Leste,1318445,14870,89,asia,tl,tls,Dili
+togo,8278724,54390,152,africa,tg,tgo,Lome
+tonga,105695,720,147,oceania,to,ton,Nuku'alofa
+trinidad and Tobago,1399488,5130,273,north-america,tt,tto,Port of Spain
+tunisia,11818619,155360,76,africa,tn,tun,Tunis
+turkey,84339067,769630,110,asia,tr,tur,Ankara
+turkmenistan,6031200,469930,13,asia,tm,tkm,Ashgabat
+tuvalu,11792,30,393,oceania,tv,tuv,Funafuti
+uganda,45741007,199810,229,africa,ug,uga,Kampala
+ukraine,43733762,579320,75,europe,ua,ukr,Kiev
+united Arab Emirates,9890402,83600,118,asia,ae,are,Abu Dhabi
+united Kingdom,67886011,241930,281,europe,gb,gbr,London
+united States of America,331002651,9147420,36,north-america,us,usa,Washington D.C.
+uruguay,3473730,175020,20,south-america,uy,ury,Montevideo
+uzbekistan,33469203,425400,79,asia,uz,uzb,Tashkent
+vanuatu,307145,12190,25,oceania,vu,vut,Port Vila
+venezuela,28435940,882050,32,south-america,ve,ven,Caracas
+vietnam,97338579,310070,314,asia,vn,vnm,Hanoi
+ymen,29825964,527970,56,asia,ye,yem,Sana'a
+zambia,18383955,743390,25,africa,zm,zmb,Lusaka
+zimbabwe,14862924,386850,38,africa,zw,zwe,Harare
