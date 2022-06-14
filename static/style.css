@@ -1,1 +1,110 @@
- #{}
+body {
+    background-color: #FFFFFF;
+  }
+  
+.main-image {
+    width: 10%;
+    right: 25%;
+    left: 25%;
+    width: 10%
+}
+
+.main-title {
+    color: green;
+}
+
+.main-image {
+    size: auto;
+}
+
+.continent-title {
+    color: green;
+}
+
+.countries-table th {
+    background-color: blue;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    background-color: black; 
+    color: white; 
+    text-align: center;
+    width: 100%;
+}
+
+
+/*Navbar start*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+  }
+  
+.navbar a {
+float: left;
+font-size: 16px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  /* Add a red background color to navbar links on hover */
+  .navbar .dropdown-item:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+    color: black;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.nav-link:hover{
+    background-color: white;
+    color: black;
+}
+
+.dropdown-menu a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+  }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+/*navbar end*/
