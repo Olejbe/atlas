@@ -17,7 +17,7 @@ def populate_database() -> None:
         for row in file_reader:
             if row[0] != 'Country':
                 continent = Continent.objects.get(name=row[4])
-                name = row[0]
+                name = row[0].capitalize()
                 pop = int(row[1])
                 land_a = int(row[2])
                 pop_d = int(row[3])

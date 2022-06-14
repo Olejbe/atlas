@@ -6,11 +6,12 @@ List of countries
 
 {% block content %}
     {% if countries %}
+<div class="container py-3" >
+    <h5>Countries in {{continent}}</h5>
+</div>
 
 <div class="container py-3" >
       <!-- Table -->
-    <h3>Overview</h3>
-    <h5>Overview of all {{continent}}an countries</h5>
     <table class="table table-striped">
         <tr>
             <th>Country</th>
@@ -27,7 +28,7 @@ List of countries
             <td>{{ country.population }}</td>
             <td>{{ country.population_density }}</td>
             <td>{{ country.land_area}}</td>
-            <td><a href="./{{ country.name }}" class="btn btn-light">More</a></td>
+            <td><a href="/{{ country.name }}" class="btn btn-light">More</a></td>
         </tr>
         {% endfor %}
     </table>

@@ -1,21 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<img
-  src="https://flagcdn.com/256x192/za.png"
-  width="256"
-  height="192"
-  alt="South Africa">
+{% extends 'base.html' %}
 
-<a href="#">Inbox <span class="badge">42</span></a>
+{% block title %}
+List of countries
+{% endblock %}
 
-<button class="btn btn-primary" type="button">
-  Messages <span class="badge">4</span>
-</button>
+{% block content %}
+    {% if countries %}
 
-</body>
-</html>
+            <div>
+                <h5>All countries in {{continent}}</h5>
+            </div>
+
+            <div class="card-deck">
+                {% for country in countries %}
+              <div class="card">
+                <img class="card-img-top" src="https://flagcdn.com/256x192/{{ country.alpha_2 }}.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ country.name }}</h5>
+                  <table class="table">
+                    <tr>
+                        <th>Capital</th><td>{{ country.capital }}</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th><td>{{ country.population }}</td>
+                    </tr>
+                    <tr>
+                        <th>Density (P/Km²)</th><td>{{ country.population_density }}</td>
+                    </tr>
+                    <tr>
+                        <th>Land Area(Km²)</th><td>{{ country.land_area}}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+    {% else %}
+    <p>No countries are available.</p>
+    {% endif %}
+{% endblock %}

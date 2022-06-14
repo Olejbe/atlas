@@ -10,15 +10,20 @@ def index(request):
     return render(request, 'countries/index.html', result)
 
 
-def details(request, name):
+def country(request, country_name):
     try:
-        country = Country.objects.get(name=name)
+        country = Country.objects.get(name=country_name)
     except ObjectDoesNotExist:
-        raise Http404("Question does not exist")
+        raise Http404("Country does not exist")
     return render(request, 'countries/details.html', {'country': country})
 
 
 def continent(request, continent):
     queryset = Country.objects.filter(continent__name=continent).order_by('name')
-    hurra = {'countries': [country for country in queryset], 'continent': continent}
-    return render(request, 'countries/continent.html', hurra)
+    result = {'countries': [country for country in queryset], 'continent': continent.capitalize()}
+
+    return render(request, 'countries/continent.html', result)
+
+
+def home(request):
+    return render(request, 'home.html')
