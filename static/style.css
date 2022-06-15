@@ -12,23 +12,10 @@ body, html {
 
 }
 
-.lol{
+.imgdiv{
   max-width: 100%;
   height: 95%;
-  border: 3px solid yellow
-}
 
-
-.image-div{
-  border: 3px solid yellow
-}
-
-.main-title {
-    color: green;
-}
-
-.continent-title {
-    color: black;
 }
 
 .footer {
@@ -115,13 +102,53 @@ text-align: left;
   }
 /*navbar end*/
 
+.continent-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2em;
+  padding-top: 2em;
 
-/*country table start*/
-
-.countries-table{
-   
+}
+.continent-title {
+  width: 100%;
+  text-align: center;
 
 }
 
 
+.table-div{
+  width:60%; 
+  margin-left:20%; 
+  margin-right:20%; 
+  
+}
+/*country table start*/
+
+.countries-table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+.countries-table td, .countries-table th {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+}
+
+.countries-table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.countries-table .tr-info:hover{
+  background-color: #ddd;
+}
+
+.countries-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #251991;
+  color: white;
+}
 /*country table end*/

@@ -7,10 +7,10 @@ List of countries
 {% block content %}
     {% if countries %}
 <div class="continent-title">
-    <h5>Countries in {{continent}}</h5>
+    <h2>Countries in {{continent}}</h2>
 </div>
 
-<div class="countries" >
+<div class="table-div" >
       <!-- Table -->
     <table class="countries-table">
         <tr>
@@ -19,10 +19,10 @@ List of countries
             <th>Population</th>
             <th>Density (P/Km²)</th>
             <th>Land Area(Km²)</th>
-            <th></th>
+            <th>Info</th>
         </tr>
         {% for country in countries %}
-        <tr>
+        <tr class="tr-info">
             <td>{{ country.name }}</td>
             <td>{{ country.capital }}</td>
             <td>{{ country.population }}</td>
@@ -33,7 +33,7 @@ List of countries
         {% endfor %}
     </table>
 </div>
-</div>
+
 
     {% else %}
     <p>No countries are available.</p>
