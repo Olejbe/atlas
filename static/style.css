@@ -1,38 +1,44 @@
-body {
+body, html {
     background-color: #FFFFFF;
+    height: 100%;
+    margin: 0%;
   }
-  
+
 .main-image {
-    width: 10%;
-    right: 25%;
-    left: 25%;
-    width: 10%
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+
+}
+
+.lol{
+  max-width: 100%;
+  height: 95%;
+  border: 3px solid yellow
+}
+
+
+.image-div{
+  border: 3px solid yellow
 }
 
 .main-title {
     color: green;
 }
 
-.main-image {
-    size: auto;
-}
-
 .continent-title {
-    color: green;
+    color: black;
 }
-
-.countries-table th {
-    background-color: blue;
-}
-
 
 .footer {
-    position: fixed;
-    left: 0;
-    background-color: black; 
-    color: white; 
-    text-align: center;
-    width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
 
@@ -108,3 +114,14 @@ text-align: left;
     display: block;
   }
 /*navbar end*/
+
+
+/*country table start*/
+
+.countries-table{
+   
+
+}
+
+
+/*country table end*/
