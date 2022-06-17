@@ -7,24 +7,17 @@
 {% block content %}
     {% if country %}
 
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading"></div>
-            <div class="panel-body">
-            </div>
 
-
-          <div class="container py-3" >
+          <div class="country-title-div" >
             <h2>{{ country.name }}</h2>
-            <hr>
-            <br>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-5 pb-4">
-                  <div class="card h-100" style="border:none">
-                       <a href="continent/{{country.continent.name}}" class="btn btn-outline-primary">Back</a>
-                    <img src="https://flagcdn.com/256x192/{{ country.alpha_2 }}.png" class="card-img-top" alt="{{ country.name}}" style="width: auto; height: 250px; object-fit: scale-down;">
-                    <div class="card-body">
-                         <table class="table">
+          </div>
+                    <div class="country-table-div">
+                         <table class="country-table">
+                         <tr>
+                             <td colspan="2" class="image-col">
+                                <img src="https://flagcdn.com/256x192/{{ country.alpha_2 }}.png" class="card-img-top" alt="{{ country.name}}">
+                             </td>
+                         </tr>
                         <tr>
                             <th>Capital</th>
                             <td>{{ country.capital }}</td>
@@ -42,13 +35,11 @@
                             <td>{{ country.land_area }}</td>
                         </tr>
                          </table>
-
+                        <button class="country-btn"  onclick="window.location.href='continent/{{country.continent.name}}';">
+                        Back to overveiw
+                        </button>
                     </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
+
 
     {% else %}
         <p>No countries are available.</p>

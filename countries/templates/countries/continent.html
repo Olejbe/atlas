@@ -5,14 +5,14 @@ List of countries
 {% endblock %}
 
 {% block content %}
-    {% if countries %}
+{% if countries %}
 <div class="continent-title">
     <h2>Countries in {{continent}}</h2>
 </div>
 
-<div class="table-div" >
-      <!-- Table -->
-    <table class="countries-table">
+<div class="table-div">
+    <!-- Table -->
+    <table class="continent-table">
         <tr>
             <th>Country</th>
             <th>Capital</th>
@@ -28,15 +28,17 @@ List of countries
             <td>{{ country.population }}</td>
             <td>{{ country.population_density }}</td>
             <td>{{ country.land_area}}</td>
-            <td><a href="/{{ country.name }}" class="btn btn-light">More</a></td>
+            <td><i class="fa fa-flag" aria-hidden="true" onclick="window.location.href='/{{ country.name }}';"></i>
+</td>
+
         </tr>
         {% endfor %}
     </table>
 </div>
 
 
-    {% else %}
-    <p>No countries are available.</p>
-    {% endif %}
+{% else %}
+<p>No countries are available.</p>
+{% endif %}
 
 {% endblock %}
