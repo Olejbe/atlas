@@ -5,38 +5,40 @@ List of countries
 {% endblock %}
 
 {% block content %}
-    {% if countries %}
-<div class="container py-3" >
-    <h5>Countries in {{continent}}</h5>
+{% if countries %}
+<div class="continent-title">
+    <h2>Countries in {{continent}}</h2>
 </div>
 
-<div class="container py-3" >
-      <!-- Table -->
-    <table class="table table-striped">
+<div class="table-div">
+    <!-- Table -->
+    <table class="continent-table">
         <tr>
             <th>Country</th>
             <th>Capital</th>
             <th>Population</th>
             <th>Density (P/Km²)</th>
             <th>Land Area(Km²)</th>
-            <th></th>
+            <th>Info</th>
         </tr>
         {% for country in countries %}
-        <tr>
+        <tr class="tr-info">
             <td>{{ country.name }}</td>
             <td>{{ country.capital }}</td>
             <td>{{ country.population }}</td>
             <td>{{ country.population_density }}</td>
             <td>{{ country.land_area}}</td>
-            <td><a href="/{{ country.name }}" class="btn btn-light">More</a></td>
+            <td><i class="fa fa-flag" aria-hidden="true" onclick="window.location.href='/{{ country.name }}';"></i>
+</td>
+
         </tr>
         {% endfor %}
     </table>
 </div>
-</div>
 
-    {% else %}
-    <p>No countries are available.</p>
-    {% endif %}
+
+{% else %}
+<p>No countries are available.</p>
+{% endif %}
 
 {% endblock %}
