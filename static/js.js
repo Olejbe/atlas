@@ -9,10 +9,8 @@ A few requirements for configuring the table:
 cPrev = -1; // global var saves the previous c, used to
             // determine if the same column is clicked again
 
-console.log("WE ARE live")
 
 function sortBy(c) {
-    console.log("THe loop is running")
     rows = document.getElementById("sortable").rows.length; // num of rows
     columns = document.getElementById("sortable").rows[0].cells.length; // num of columns
     arrTable = [...Array(rows)].map(e => Array(columns)); // create an empty 2d array
