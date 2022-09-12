@@ -12,14 +12,15 @@ List of countries
 
 <div class="table-div">
     <!-- Table -->
-    <table class="continent-table">
+    <table class="continent-table" id="sortable">
         <tr>
-            <th>Country</th>
-            <th>Capital</th>
-            <th>Population</th>
-            <th>Density (P/Km²)</th>
-            <th>Land Area(Km²)</th>
-            <th>Info</th>
+            <th onclick="sortBy(0)">Country</th>
+            <th onclick="sortBy(1)">Capital</th>
+            <th onclick="sortBy(2)">Population</th>
+            <th onclick="sortBy(3)">Density (P/Km²)</th>
+            <th onclick="sortBy(4)">Land Area(Km²)</th>
+            <th onclick="sortBy(5)">Info</th>
+        </tr>
         </tr>
         {% for country in countries %}
         <tr class="tr-info">
