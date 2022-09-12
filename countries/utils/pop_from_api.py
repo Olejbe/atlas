@@ -6,36 +6,40 @@ def get_info() -> list:
     return all_countries
 
 
-def populate_database_from_api_un():
+def populate_database_from_api():
     countries = get_info()
     un_countries = []
-    count=1
+    count = 1
     for country in countries:
         country_keys = country.keys()
         print(country['name']['official'], country['unMember'], count)
         c = {
         'name_official':  country['name']['official'],
-        'name_community':  country['name']['common'],
+        'name_common':  country['name']['common'],
+        'continent': country["region"],
+        'timezone': country['timezones'],
         'independent':  country['independent'] if 'independent' in country_keys else None,
         'domain':  country['tld'][0] if 'tld' in country_keys else None,
         'un_member':  country['unMember'],
         'capital':  country['capital'] if 'capital' in country_keys else None,
-        'continent':  country['region'],
         'sub_region':  country['subregion'] if 'subregion' in country_keys else None,
         'landlocked':  country['landlocked'],
         'population':  country['population'],
+        'area': country['area'],
         'coordinates':  country['latlng'] if 'latlng' in country_keys else None,
-        'capital_coordinates':  country['capitalInfo']['latlng'] if 'capital' in country_keys else None,
-        'timezone':  country['timezones'],
+        'capital_coordinates':  country['capitalInfo']['latlng'] if 'capital' in country_keys and 'latlng' in country['capitalInfo'].keys() else None,
         'cca2':  country['cca2'] if 'cca2' in country_keys else None,
         'cca3':  country['cca3'] if 'cca3' in country_keys else None,
         # 'cioc':  country['cioc'],
         'ccn3':  country['ccn3'] if 'ccn3' in country_keys else None,
         'boders': country['borders'] if 'borders' in country_keys else None,
+        'flag': country['flags']['svg']
         }
         un_countries.append(c)
         count += 1
     return un_countries
+
+# Remember that south africa apperantly has three capital cities -,-
 
 
 def populate_database_from_api_non_un():
@@ -43,8 +47,9 @@ def populate_database_from_api_non_un():
     non_un_countries = []
     count = 1
     for country in countries:
-        print(country['name']['official'], country['unMember'], count)
+        country = country.defaultdict(lambda: None)
         if not country['unMember']:
+            print(country['name']['official'], country['unMember'], count)
             c = {
             'name_official':  country['name']['official'],
             'name_community':  country['name']['common'],
@@ -70,5 +75,5 @@ def populate_database_from_api_non_un():
             except Exception:
                 print(f"found no borders/capital for country: {country['name']['official']}")
             non_un_countries.append(c)
-        count += 1
+            count += 1
     return non_un_countries
