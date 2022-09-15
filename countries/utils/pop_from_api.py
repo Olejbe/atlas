@@ -1,4 +1,8 @@
 import requests
+from countries.models import Continent
+from countries.models import Country2
+from django.core.exceptions import ObjectDoesNotExist
+
 
 def get_info() -> list:
     response = requests.get('https://restcountries.com/v3.1/all')
@@ -6,74 +10,88 @@ def get_info() -> list:
     return all_countries
 
 
-def populate_database_from_api():
-    countries = get_info()
-    un_countries = []
-    count = 1
+def fetch_continent():
+    continents = ['asia', 'africa', 'europe', 'north-america', 'south-america', 'oceania']
+    for continent in continents:
+        Continent.objects.update_or_create(name=continent)
+
+
+def create_continent_object(region: str) -> Continent:
+    """
+    Creates a continent object based on co
+    :param region:
+    :return:
+    """
+    try:
+        obj = Continent.objects.get(name=region)
+    except ObjectDoesNotExist:
+        print(f'{region} does not exist therefore creating it')
+        obj = Continent.objects.create(name=region)
+    return obj
+
+
+
+def create_country_object(country: dict, continent: Continent) -> Country2:
+    """
+    receives a country dict and continent and creates a country2 object.
+    :param country:
+    :param continent:
+    :return: Country2
+    """
+    country_keys = country.keys()
+    for k,v in country.items():
+        print(f"Key: {k}, Value: {v}, ValueTYpe: {type(v)}" )
+    country_obj = Country2.objects.update_or_create(
+        name_official=country['name']['official'],
+        name_common=country['name']['common'],
+        continent=continent,
+        timezone=','.join(country["timezones"]),
+        independent=country['independent'] if 'independent' in country_keys else None,
+        domain=country['tld'][0] if 'tld' in country_keys else None,
+        un_member=country['unMember'],
+        capital=','.join(country['capital']) if 'capital' in country_keys else None,
+        sub_region=country['subregion'] if 'subregion' in country_keys else None,
+        landlocked=country['landlocked'],
+        population=country['population'],
+        area=country['area'],
+        # coordinates=','.join(country['latlng']) if 'latlng' in country_keys else None,
+        # capital_coordinates=','.join(country['capitalInfo']['latlng']) if 'capital' in country_keys and 'latlng' in
+        #                                                                   country['capitalInfo'].keys() else None,
+        # cca2=country['cca2'] if 'cca2' in country_keys else None,
+        # cca3=country['cca3'] if 'cca3' in country_keys else None,
+        # ccn3=country['ccn3'] if 'ccn3' in country_keys else None,
+        # boders=','.join(country['borders']) if 'borders' in country_keys else None,
+        # flag=country['flags']['svg']
+    )
+    return country_obj
+
+
+def populate_countries(countries: list[dict]) -> None:
+    """
+    Api response with all countries in the world.
+    :param countries:
+    :return: None
+    """
     for country in countries:
-        country_keys = country.keys()
-        print(country['name']['official'], country['unMember'], count)
-        c = {
-        'name_official':  country['name']['official'],
-        'name_common':  country['name']['common'],
-        'continent': country["region"],
-        'timezone': country['timezones'],
-        'independent':  country['independent'] if 'independent' in country_keys else None,
-        'domain':  country['tld'][0] if 'tld' in country_keys else None,
-        'un_member':  country['unMember'],
-        'capital':  country['capital'] if 'capital' in country_keys else None,
-        'sub_region':  country['subregion'] if 'subregion' in country_keys else None,
-        'landlocked':  country['landlocked'],
-        'population':  country['population'],
-        'area': country['area'],
-        'coordinates':  country['latlng'] if 'latlng' in country_keys else None,
-        'capital_coordinates':  country['capitalInfo']['latlng'] if 'capital' in country_keys and 'latlng' in country['capitalInfo'].keys() else None,
-        'cca2':  country['cca2'] if 'cca2' in country_keys else None,
-        'cca3':  country['cca3'] if 'cca3' in country_keys else None,
-        # 'cioc':  country['cioc'],
-        'ccn3':  country['ccn3'] if 'ccn3' in country_keys else None,
-        'boders': country['borders'] if 'borders' in country_keys else None,
-        'flag': country['flags']['svg']
-        }
-        un_countries.append(c)
-        count += 1
-    return un_countries
+        continent = create_continent_object(country['region'])
+        country_obj = create_country_object(country, continent)
+        print(f"{country_obj[0].name_official} successfully created")
+        # try:
+        # except Exception as e:
+        #     print(f"{country['name']['official']} - failed due to the following error: {e}")
+
+
+def populate_db_from_api() -> None:
+    """
+    Main function to run the database population.
+    Fetches information from api, and then creates database entries.
+    :return: None
+    """
+    # populate_continents()
+    countries = get_info()
+    populate_countries(countries)
 
 # Remember that south africa apperantly has three capital cities -,-
 
 
-def populate_database_from_api_non_un():
-    countries = get_info()
-    non_un_countries = []
-    count = 1
-    for country in countries:
-        country = country.defaultdict(lambda: None)
-        if not country['unMember']:
-            print(country['name']['official'], country['unMember'], count)
-            c = {
-            'name_official':  country['name']['official'],
-            'name_community':  country['name']['common'],
-            'independent':  country['independent'],
-            'domain':  country['tld'][0],
-            'un_member':  country['unMember'],
-            'continent':  country['region'],
-            'landlocked':  country['landlocked'],
-            'population':  country['population'],
-            'coordinates':  country['latlng'],
-            'capital_coordinates':  country['capitalInfo']['latlng'],
-            'timezone':  country['timezones'],
-            'cca2':  country['cca2'],
-            'cca3':  country['cca3'],
-            'ccn3':  country['ccn3']
-            }
-            try:
-                c['borders'] = country['borders']
-                c['capital'] = country['captial']
-            except KeyError:
-                c['borders'] = ''
-                c['captial'] = ''
-            except Exception:
-                print(f"found no borders/capital for country: {country['name']['official']}")
-            non_un_countries.append(c)
-            count += 1
-    return non_un_countries
+
