@@ -30,7 +30,6 @@ def create_continent_object(region: str) -> Continent:
     return obj
 
 
-
 def create_country_object(country: dict, continent: Continent) -> Country2:
     """
     receives a country dict and continent and creates a country2 object.
@@ -39,8 +38,9 @@ def create_country_object(country: dict, continent: Continent) -> Country2:
     :return: Country2
     """
     country_keys = country.keys()
-    for k,v in country.items():
-        print(f"Key: {k}, Value: {v}, ValueTYpe: {type(v)}" )
+    available_coordinates = True if 'latlng' in country_keys else False
+    available_capital_coordinates = True if 'capital' in country_keys and 'latlng' in country[
+        'capitalInfo'].keys() else False
     country_obj = Country2.objects.update_or_create(
         name_official=country['name']['official'],
         name_common=country['name']['common'],
@@ -54,14 +54,15 @@ def create_country_object(country: dict, continent: Continent) -> Country2:
         landlocked=country['landlocked'],
         population=country['population'],
         area=country['area'],
-        # coordinates=','.join(country['latlng']) if 'latlng' in country_keys else None,
-        # capital_coordinates=','.join(country['capitalInfo']['latlng']) if 'capital' in country_keys and 'latlng' in
-        #                                                                   country['capitalInfo'].keys() else None,
-        # cca2=country['cca2'] if 'cca2' in country_keys else None,
-        # cca3=country['cca3'] if 'cca3' in country_keys else None,
-        # ccn3=country['ccn3'] if 'ccn3' in country_keys else None,
-        # boders=','.join(country['borders']) if 'borders' in country_keys else None,
-        # flag=country['flags']['svg']
+        coordinates_lat=country['latlng'][0] if available_coordinates else None,
+        coordinates_lon=country['latlng'][1] if available_coordinates else None,
+        capital_coordinates_lat=country['capitalInfo']['latlng'][0] if available_capital_coordinates else None,
+        capital_coordinates_lon=country['capitalInfo']['latlng'][1] if available_capital_coordinates else None,
+        cca2=country['cca2'] if 'cca2' in country_keys else None,
+        cca3=country['cca3'] if 'cca3' in country_keys else None,
+        ccn3=country['ccn3'] if 'ccn3' in country_keys else None,
+        borders=','.join(country['borders']) if 'borders' in country_keys else None,
+        flag=country['flags']['svg']
     )
     return country_obj
 
@@ -72,10 +73,13 @@ def populate_countries(countries: list[dict]) -> None:
     :param countries:
     :return: None
     """
+    total_countries = len(countries)
+    num=0
     for country in countries:
         continent = create_continent_object(country['region'])
         country_obj = create_country_object(country, continent)
-        print(f"{country_obj[0].name_official} successfully created")
+        num+=1
+        print(f"{country_obj[0].name_official} successfully {'created' if country_obj[1] else 'updated'} - {num}/{total_countries}")
         # try:
         # except Exception as e:
         #     print(f"{country['name']['official']} - failed due to the following error: {e}")
