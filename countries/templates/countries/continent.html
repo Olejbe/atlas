@@ -15,21 +15,21 @@ List of countries
     <table class="continent-table" id="sortable">
         <tr>
             <th onclick="sortBy(0)">Country</th>
-            <th onclick="sortBy(1)">Capital</th>
-            <th onclick="sortBy(2)">Population</th>
-            <th onclick="sortBy(3)">Density (P/Km²)</th>
-            <th onclick="sortBy(4)">Land Area(Km²)</th>
+            <th onclick="sortBy(1)">Sub-region</th>
+            <th onclick="sortBy(2)">Capital</th>
+            <th onclick="sortBy(3)">Population</th>
+            <th onclick="sortBy(4)">Area (Km²)</th>
             <th onclick="sortBy(5)">Info</th>
         </tr>
         </tr>
         {% for country in countries %}
         <tr class="tr-info">
-            <td>{{ country.name }}</td>
+            <td>{{ country.name_common }}</td>
+            <td>{{ country.sub_region }}</td>
             <td>{{ country.capital }}</td>
             <td>{{ country.population }}</td>
-            <td>{{ country.population_density }}</td>
-            <td>{{ country.land_area}}</td>
-            <td><i class="fa fa-flag" aria-hidden="true" onclick="window.location.href='/{{ country.name }}';"></i>
+            <td>{{ country.area}}</td>
+            <td><i class="fa fa-flag" aria-hidden="true" onclick="window.location.href='/{{ country.name_common }}';"></i>
 </td>
 
         </tr>

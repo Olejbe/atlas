@@ -9,30 +9,50 @@
 
 
           <div class="country-title-div" >
-            <h2>{{ country.name }}</h2>
+            <h2>{{ country.name_common }}</h2>
           </div>
                     <div class="country-table-div">
                          <table class="country-table">
                          <tr>
                              <td colspan="2" class="image-col">
-                                <img src="https://flagcdn.com/256x192/{{ country.alpha_2 }}.png" class="card-img-top" alt="{{ country.name}}">
+                                <img src="https://flagcdn.com/256x192/{{ country.cca2 }}.png" class="card-img-top" alt="{{ country.name_common}}">
                              </td>
                          </tr>
+                         <tr>
+                            <th>Offical name</th>
+                            <td>{{ country.name_official }}</td>
+                        </tr>
+                         <tr>
+                            <th>Sub-region</th>
+                            <td>{{ country.sub_region }}</td>
+                        </tr>
                         <tr>
                             <th>Capital</th>
                             <td>{{ country.capital }}</td>
+                        </tr>
+                         <tr>
+                            <th>Capital coordinates</th>
+                            <td>{{ country.capital_coordinates_lat }}, {{ country.capital_coordinates_lon }}</td>
                         </tr>
                         <tr>
                             <th>Population</th>
                             <td>{{ country.population }}</td>
                         </tr>
                         <tr>
-                            <th>Density (P/Km²)</th>
-                            <td>{{ country.population_density }}</td>
+                            <th>Landlocked</th>
+                            <td>{{ country.landlocked }}</td>
+                        </tr>
+                         <tr>
+                            <th>Independent</th>
+                            <td>{{ country.independent }}</td>
+                        </tr>
+                         <tr>
+                            <th>Borders</th>
+                            <td>{{ country.borders }}</td>
                         </tr>
                          <tr>
                             <th>Land Area(Km²)</th>
-                            <td>{{ country.land_area }}</td>
+                            <td>{{ country.area }}</td>
                         </tr>
                          </table>
                         <button class="country-btn"  onclick="window.location.href='continent/{{country.continent.name}}';">

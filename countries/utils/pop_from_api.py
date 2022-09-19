@@ -58,9 +58,9 @@ def create_country_object(country: dict, continent: Continent) -> Country2:
         coordinates_lon=country['latlng'][1] if available_coordinates else None,
         capital_coordinates_lat=country['capitalInfo']['latlng'][0] if available_capital_coordinates else None,
         capital_coordinates_lon=country['capitalInfo']['latlng'][1] if available_capital_coordinates else None,
-        cca2=country['cca2'] if 'cca2' in country_keys else None,
-        cca3=country['cca3'] if 'cca3' in country_keys else None,
-        ccn3=country['ccn3'] if 'ccn3' in country_keys else None,
+        cca2=country['cca2'].lower() if 'cca2' in country_keys else None,
+        cca3=country['cca3'].lower() if 'cca3' in country_keys else None,
+        ccn3=country['ccn3'].lower() if 'ccn3' in country_keys else None,
         borders=','.join(country['borders']) if 'borders' in country_keys else None,
         flag=country['flags']['svg']
     )

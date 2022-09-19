@@ -185,7 +185,7 @@ background-color: #ddd;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  color: white;
+  color: black;
   border-right: 1px solid black;
   width: 50%;
 
@@ -220,6 +220,7 @@ background-color: #ddd;
   font-size: 16px;
   border-radius: 12px;
   margin-top: 20px;
+
 }
 
 
@@ -232,6 +233,8 @@ background-color: #ddd;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
+  background-color:#6b1792
 }
+
 
 /*btn stop*/
