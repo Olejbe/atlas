@@ -163,7 +163,7 @@ background-color: #ddd;
   margin-left:20%; 
   margin-right:20%;
   text-align: center;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 }
 
 .country-table-div{
@@ -186,7 +186,7 @@ background-color: #ddd;
   padding-bottom: 12px;
   text-align: center;
   color: black;
-  border-right: 1px solid black;
+  /* border-right: 1px solid black; */
   width: 50%;
 
 }
@@ -197,19 +197,18 @@ background-color: #ddd;
   text-align: center;
   color: black;
   width: 50%;
-  
 
 }
 
 .country-table .image-col{
   text-align: center;
-  border-bottom: 1px solid black
+  /* border-bottom: 1px solid black */
 }
 
-/*country table end*/s
+/*country table end*/
 
 /* start btn */
-.country-btn {
+.country-table-div .country-btn {
   background-color: #6b1792; 
   border: none;
   color: white;
@@ -220,6 +219,10 @@ background-color: #ddd;
   font-size: 16px;
   border-radius: 12px;
   margin-top: 20px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  
 
 }
 
@@ -229,12 +232,7 @@ background-color: #ddd;
 
 }
 
-.country-table-div .country-btn {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  background-color:#6b1792
-}
+
 
 
 /*btn stop*/
