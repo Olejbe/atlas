@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="map-container">
+    <div class="main-map-header">
+        <h1>{{country}}</h1>
+    </div>
+    {{ country_map|safe }}
+</div>
+
+
+{% endblock %}
