@@ -1,7 +1,8 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render
-from countries.models import Country, Country2
 from django.http import Http404
+from django.shortcuts import render
+
+from countries.models import Country, Country2
 
 
 def index(request):

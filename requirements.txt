@@ -1,0 +1,4 @@
+Django~=3.2.7
+djangorestframework~=3.12.4
+folium~=0.12.1.post1
+requests~=2.26.0

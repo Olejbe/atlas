@@ -1,7 +1,8 @@
 import requests
+from django.core.exceptions import ObjectDoesNotExist
+
 from countries.models import Continent
 from countries.models import Country2
-from django.core.exceptions import ObjectDoesNotExist
 
 
 def get_info() -> list:
