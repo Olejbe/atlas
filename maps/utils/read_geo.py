@@ -35,7 +35,7 @@ def get_entry(data: dict, numb) -> dict:
     return data['features'][numb]
 
 
-def pop_db(data: dict):
+def pop_db(data: dict) -> None:
     """
     Take an entire dictionary
     :param data:
@@ -70,7 +70,11 @@ def get_country_object(cca3: str) -> Country2:
     return country_obj
 
 
-def load_geo_db():
+def load_geo_db() -> None:
+    """
+    Main function for populating the Geojson model
+    :return: None
+    """
     data = read_from_file()
     pop_db(data)
 

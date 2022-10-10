@@ -55,6 +55,11 @@
                             <td>{{ country.area }}</td>
                         </tr>
                          </table>
+
+                        <div class="country-map">
+                            {{ map|safe }}
+                        </div>
+
                         <button class="country-btn"  onclick="window.location.href='continent/{{country.continent.name}}';">
                         Back
                         </button>

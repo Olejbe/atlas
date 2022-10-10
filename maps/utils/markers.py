@@ -24,6 +24,7 @@ def add_marker(m: folium.folium.Map, lat: float =None, lon: float=None, color: s
     return m
 
 # This needs more development
+
 def simple_marker(m:folium.folium.Map, lat, lon) -> folium.folium.Map:
     """
     :param m: the map object
@@ -37,3 +38,17 @@ def simple_marker(m:folium.folium.Map, lat, lon) -> folium.folium.Map:
                   icon=folium.Icon(prefix='glyphicon', icon='off')
                   ).add_to(m)
     return m
+
+
+def circle_marker(lat: float, lon: float, folium_map: folium.folium.Map) -> folium.folium.Map:
+    folium.CircleMarker(
+        location=(lat, lon),
+        radius=10,
+        popup="Laurelhurst Park",
+        color="#3186cc",
+        fill=True,
+        # fill_color="#3186cc",
+        fill_color="darkred",
+    ).add_to(folium_map)
+    return folium_map
+

@@ -22,17 +22,14 @@ def world(request):
 
 
 def country_map(request, country):
-    m = folium.Map(location=[0, 0], zoom_start=2)
-    # add functionality to add country overlay
-    #        country = Country2.objects.get(name_common=country_name)
     try:
         geo_obj = GeoObject.objects.get(country_name=country.capitalize())
     except ObjectDoesNotExist:
-        raise Http404("Country does not exist")
+        raise Http404("Country does not exist")  # replace this with an generic error view.
 
     m = folium.Map(location=[0, 0], zoom_start=2)
-    folium.GeoJson(geo_obj.geo_json, style_function= lambda x: {'fillColor': '#000000', 'color': '#000000'}).add_to(m)
-    m=m._repr_html_()
+    folium.GeoJson(geo_obj.geo_json, style_function=lambda x: {'fillColor': '#000000', 'color': '#000000'}).add_to(m)
+    m = m._repr_html_()
     context = {'country_map': m, 'country': geo_obj.country_name}
     return render(request, 'country_map.html', context)
 
