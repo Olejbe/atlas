@@ -19,7 +19,9 @@ def extract_geo_object(country_obj: Country2) -> [GeoObject, None]:
 def add_geo_json(geo_object: GeoObject, folium_map: folium.folium.Map) -> folium.folium.Map:
     folium.GeoJson(geo_object.geo_json,
                    style_function=lambda x: {'fillColor': '#000000', 'color': '#000000'},
-                   name=geo_object.country_name).add_to(folium_map)
+                   name=geo_object.country_name,
+                   tooltip='<img src="https://flagcdn.com/256x192/fi.png" alt="Finland">',
+                   popup='lol').add_to(folium_map)
     return folium_map
 
 
@@ -47,10 +49,12 @@ def add_neighbour_countries(border_countries: list[Country2], folium_map: folium
 
 def create_country_map(country_obj: Country2, neighbours=False, capitals=False) -> folium.folium.Map:
     geo_object = extract_geo_object(country_obj)
-    m = folium.Map(location=[0, 0], zoom_start=2)
+    lon = country_obj.capital_coordinates_lon
+    lat = country_obj.capital_coordinates_lat
+    m = folium.Map(location=[lat, lon], zoom_start=3)
     folium.GeoJson(geo_object.geo_json, name=geo_object.country_name).add_to(m)
-    if neighbours:
-        border_countries = get_neighbour_countries(country_obj)
+    border_countries = get_neighbour_countries(country_obj)
+    if neighbours and border_countries:
         add_neighbour_countries(border_countries, m)
     if capitals:
         # circle_marker(country_obj.capital_coordinates_lat, country_obj.capital_coordinates_lon, m)
