@@ -2,7 +2,7 @@ import requests
 from django.core.exceptions import ObjectDoesNotExist
 
 from countries.models import Continent
-from countries.models import Country2
+from countries.models import Country
 
 
 def get_info() -> list:
@@ -31,18 +31,18 @@ def create_continent_object(region: str) -> Continent:
     return obj
 
 
-def create_country_object(country: dict, continent: Continent) -> Country2:
+def create_country_object(country: dict, continent: Continent) -> Country:
     """
-    receives a country dict and continent and creates a country2 object.
+    receives a country dict and continent and creates a Country object.
     :param country:
     :param continent:
-    :return: Country2
+    :return: Country
     """
     country_keys = country.keys()
     available_coordinates = True if 'latlng' in country_keys else False
     available_capital_coordinates = True if 'capital' in country_keys and 'latlng' in country[
         'capitalInfo'].keys() else False
-    country_obj = Country2.objects.update_or_create(
+    country_obj = Country.objects.update_or_create(
         name_official=country['name']['official'],
         name_common=country['name']['common'],
         continent=continent,
@@ -86,7 +86,7 @@ def populate_countries(countries: list[dict]) -> None:
         #     print(f"{country['name']['official']} - failed due to the following error: {e}")
 
 
-def populate_db_from_api() -> None:
+def populate_db() -> None:
     """
     Main function to run the database population.
     Fetches information from api, and then creates database entries.

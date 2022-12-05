@@ -1,5 +1,5 @@
 import json
-from countries.models import Country2
+from countries.models import Country
 from maps.models import GeoObject
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -60,10 +60,10 @@ def create_object(data: dict) -> GeoObject:
     return geo_obj
 
 
-def get_country_object(cca3: str) -> Country2:
+def get_country_object(cca3: str) -> Country:
     cca3_lower = cca3.lower()
     try:
-        country_obj = Country2.objects.get(cca3=cca3_lower)
+        country_obj = Country.objects.get(cca3=cca3_lower)
     except ObjectDoesNotExist:
         print(f"found no matching country with cca3 = {cca3}")
         country_obj = None

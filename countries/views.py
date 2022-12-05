@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from django.shortcuts import render
 
-from countries.models import Country, Country2
+from countries.models import Country
 from maps.utils.map_creator import create_country_map
 
 
@@ -14,7 +14,7 @@ def index(request):
 
 def country(request, country_name):
     try:
-        country = Country2.objects.prefetch_related('country').get(name_common=country_name)
+        country = Country.objects.prefetch_related('country').get(name_common=country_name)
         country_map = create_country_map(country, neighbours=True, capitals=True)
     except ObjectDoesNotExist:
         raise Http404("Country does not exist")
@@ -22,8 +22,8 @@ def country(request, country_name):
 
 
 def continent(request, continent):
-    print(request)
-    queryset = Country2.objects.filter(continent__name=continent).order_by('name_common')
+
+    queryset = Country.objects.filter(continent__name=continent).order_by('name_common')
     result = {'countries': [country for country in queryset], 'continent': continent.capitalize()}
 
     return render(request, 'countries/continent.html', result)
