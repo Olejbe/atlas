@@ -1,4 +1,5 @@
 import folium
+from countries.models import Country2
 
 def add_marker(m: folium.folium.Map, lat: float =None, lon: float=None, color: str=None) -> folium.folium.Map:
     """
@@ -25,16 +26,19 @@ def add_marker(m: folium.folium.Map, lat: float =None, lon: float=None, color: s
 
 # This needs more development
 
-def simple_marker(m:folium.folium.Map, lat, lon) -> folium.folium.Map:
+def simple_capital_marker(m:folium.folium.Map, country:Country2) -> folium.folium.Map:
     """
     :param m: the map object
     :param lat: latitude
     :param lon: longitude
     :return: folium object with marker attached.
     """
+    lat = country.capital_coordinates_lat
+    lon = country.capital_coordinates_lon
+    tooltip = country.capital
     folium.Marker(location=[lat, lon],
-                  popup='Custom Marker 2',
-                  tooltip='<strong>Click here to see Popup</strong>',
+                  # popup='Custom Marker 2',
+                  tooltip=f'{tooltip}',
                   icon=folium.Icon(prefix='glyphicon', icon='off')
                   ).add_to(m)
     return m
