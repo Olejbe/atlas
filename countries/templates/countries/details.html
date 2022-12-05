@@ -7,11 +7,10 @@
 {% block content %}
     {% if country %}
 
-
-          <div class="country-title-div" >
-            <h2>{{ country.name_common }}</h2>
-          </div>
                     <div class="country-table-div">
+
+                        <h1>{{ country.name_common }}</h1>
+
                          <table class="country-table">
                          <tr>
                              <td colspan="2" class="image-col">
@@ -55,6 +54,11 @@
                             <td>{{ country.area }}</td>
                         </tr>
                          </table>
+
+                        <div class="country-map">
+                            {{ map|safe }}
+                        </div>
+
                         <button class="country-btn"  onclick="window.location.href='continent/{{country.continent.name}}';">
                         Back
                         </button>

@@ -38,3 +38,6 @@ wheels/
 *.egg
 *.manifest
 *.spec
+
+#sonar
+.idea*

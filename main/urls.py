@@ -15,32 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
-from rest_framework import permissions
-
-
-schema_view = get_schema_view(
-   openapi.Info(
-      title="Country API",
-      default_version='v1',
-      description="This is my simple project for facts about countries",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="olejbe@gmail.com"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
-)
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 # Add new main Urls Here
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    path('', include('countries.urls')),
-    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    # url(r'', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+swagger_urls = [
+    # YOUR PATTERNS
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    # path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
 ]
+
+urlpatterns = [
+                  path('admin/', admin.site.urls),
+                  path('api/', include('api.urls')),
+                  path('', include('countries.urls')),
+                  path('maps/', include('maps.urls')),
+              ] + swagger_urls

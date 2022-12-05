@@ -43,10 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
-    'drf_yasg',
+    'drf_spectacular',
     'rest_framework',
     'countries',
     'api',
+    'maps',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# THis is for the swagger UI provided by drf_spectacular
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Countries',
+    'DESCRIPTION': 'Just a simple hobby project focusing on maps and learning :D',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
 
 TEMPLATES = [
     {
@@ -132,6 +147,8 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

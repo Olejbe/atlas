@@ -1,7 +1,9 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render
-from countries.models import Country, Country2
 from django.http import Http404
+from django.shortcuts import render
+
+from countries.models import Country, Country2
+from maps.utils.map_creator import create_country_map
 
 
 def index(request):
@@ -12,10 +14,11 @@ def index(request):
 
 def country(request, country_name):
     try:
-        country = Country2.objects.get(name_common=country_name)
+        country = Country2.objects.prefetch_related('country').get(name_common=country_name)
+        country_map = create_country_map(country, neighbours=True, capitals=True)
     except ObjectDoesNotExist:
         raise Http404("Country does not exist")
-    return render(request, 'countries/details.html', {'country': country})
+    return render(request, 'countries/details.html', {'country': country, 'map': country_map})
 
 
 def continent(request, continent):
