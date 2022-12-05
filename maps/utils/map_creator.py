@@ -1,5 +1,5 @@
 import folium
-from countries.models import Country2
+from countries.models import Country
 from maps.models import GeoObject
 from maps.utils.markers import circle_marker, simple_capital_marker
 from maps.utils.layers import add_layers
@@ -7,7 +7,7 @@ from maps.utils.layers import add_layers
 
 # Rewrite this as a class at some point!!.
 
-def extract_geo_object(country_obj: Country2) -> [GeoObject, None]:
+def extract_geo_object(country_obj: Country) -> [GeoObject, None]:
     try:
         geo_object = country_obj.country.first()
     except Exception as e:
@@ -17,7 +17,7 @@ def extract_geo_object(country_obj: Country2) -> [GeoObject, None]:
     return geo_object
 
 
-def generate_tooltip(country: Country2) -> str:
+def generate_tooltip(country: Country) -> str:
     tooltip = f'<div style="width:95%;text-align:center">' \
               f'<img src="https://flagcdn.com/48x36/{country.cca2}.png" alt="{country.name_common}">' \
               f'<h4 style=text>{country.name_common}</h4>' \
@@ -31,7 +31,7 @@ def add_tooltip_geo_json(geo_json:folium.GeoJson) -> None:
     ).add_to(geo_json)
 
 
-def add_geo_json(country: Country2, geo_object: GeoObject, folium_map: folium.folium.Map) -> folium.folium.Map:
+def add_geo_json(country: Country, geo_object: GeoObject, folium_map: folium.folium.Map) -> folium.folium.Map:
     tooltip = generate_tooltip(country)
     geo_json = folium.GeoJson(geo_object.geo_json,
                    style_function=lambda x: {'fillColor': '#000000', 'color': '#000000'},
@@ -42,7 +42,7 @@ def add_geo_json(country: Country2, geo_object: GeoObject, folium_map: folium.fo
     return folium_map
 
 
-def get_neighbour_countries(country_obj: Country2) -> [list[str], None]:
+def get_neighbour_countries(country_obj: Country) -> [list[str], None]:
     """
     Fetches the country objects for countries with a border to the selected country.
     :param country_obj:
@@ -51,19 +51,19 @@ def get_neighbour_countries(country_obj: Country2) -> [list[str], None]:
     if neighbours_as_str:
         neighbours_list = country_obj.borders.split(',')
         lower_list = [n.lower() for n in neighbours_list]
-        border_countries = Country2.objects.prefetch_related('country').filter(cca3__in=lower_list)
+        border_countries = Country.objects.prefetch_related('country').filter(cca3__in=lower_list)
         return border_countries
     return None
 
 
-def add_neighbour_countries(border_countries: list[Country2], folium_map: folium.folium.Map):
+def add_neighbour_countries(border_countries: list[Country], folium_map: folium.folium.Map):
     for country in border_countries:
         geo_object = extract_geo_object(country)
         add_geo_json(country, geo_object, folium_map)
     return folium_map
 
 
-def create_country_map(country_obj: Country2, neighbours=False, capitals=False) -> folium.folium.Map:
+def create_country_map(country_obj: Country, neighbours=False, capitals=False) -> folium.folium.Map:
     geo_object = extract_geo_object(country_obj)
     lon = country_obj.capital_coordinates_lon
     lat = country_obj.capital_coordinates_lat
